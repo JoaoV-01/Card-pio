@@ -183,22 +183,29 @@ select * from clientes;
 select * from livros;
 select * from autores;
 
+-- 1 --
 select CURRENT_DATE AS data_atual;
 
+-- 2 --
 select PedidoID, DataPedido, ValorTotal *10 from pedidos;
 
+-- 3 --
 select PedidoID, DataPedido, ValorTotal as ValorOriginal, ValorTotal *1.10 as ValorTotalComAumento, ValorTotal *0.10 as ValorAcrescido
 from pedidos;
 
+-- 4 --
 select upper(NomeCliente) as Nome_Maiusculo, lower(Email) as Email_Minusculo
 FROM Clientes;	
 
+-- 5 --
 select left(NomeCliente, 3) as Tres_Primeiras_Letras, Email
 from Clientes;
 
+-- 6 --
 select DataPedido, DataPedido + current_date as Quantidade_de_Dias 
 from Pedidos;
 
+-- 7 --
 select DataPedido,
     DATEDIFF(current_date, DataPedido) AS Quantidade_de_Dias,
     DATE_ADD(DataPedido, INTERVAL 15 DAY) AS DataPedido_Mais_15_Dias
